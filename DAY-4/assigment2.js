@@ -5,22 +5,36 @@ console.log("--------");
 
 const konversiMenit = (menit) => {
     //get minute
-    let result = Math.floor(menit / 60);
+    let mins = menit / 60;
+    mins = mins.toString();
+    let index = 1;
+    for (let i = 0; i < mins.length; i++) {
+        if (mins[i] == ".") {
+            index = i;
+        }
+    }
+    let minute = "";
+    for (let i = 0; i < index; i++) {
+        minute = minute + mins[i];
+    }
 
     //get seconds
-    const sec = menit % 60;
-    const seconds = (sec) => {
-        return sec.toString().padStart(2, "0");
-    };
+    let sec = menit % 60;
+    if (!sec.toString()[1]) {
+        sec = "0" + sec.toString();
+    }
+    // const seconds = (sec) => {
+    //     return sec.toString().padStart(2, "0"); //nga boleh
+    // };
 
-    return `${result}:${seconds(sec)}`;
+    return `${minute}:${sec}`;
 };
 
 // TEST CASES
 
 console.log(konversiMenit(63)); // 1:03
 
-console.log(konversiMenit(124)); // 2:04
+console.log(konversiMenit(12400)); // 2:04
 
 console.log(konversiMenit(53)); // 0:53
 
@@ -124,16 +138,16 @@ const targetTerdekat = (target) => {
         }
     }
     if (indexTarget.length !== 0) {
-        indexTarget.forEach((element) => {
+        for (let index = 0; index < indexTarget.length; index++) {
             let dis;
-            if (element > indexPoint) {
-                dis = element - indexPoint;
+            if (indexTarget[index] > indexPoint) {
+                dis = indexTarget[index] - indexPoint;
                 distance.push(dis);
             } else {
-                dis = indexPoint - element;
+                dis = indexPoint - indexTarget[index];
                 distance.push(dis);
             }
-        });
+        }
     } else {
         distance.push(0);
     }
