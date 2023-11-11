@@ -137,7 +137,7 @@ const targetTerdekat = (target) => {
             indexTarget.push(index + 1);
         }
     }
-    if (indexTarget.length !== 0) {
+    if (indexTarget.length !== 0 && indexPoint != 0) {
         for (let index = 0; index < indexTarget.length; index++) {
             let dis;
             if (indexTarget[index] > indexPoint) {
@@ -151,8 +151,14 @@ const targetTerdekat = (target) => {
     } else {
         distance.push(0);
     }
+    let minDistance = distance[0];
+    for (const dis of distance) {
+        if (dis < minDistance) {
+            minDistance = dis;
+        }
+    }
 
-    return Math.min(...distance);
+    return minDistance;
 };
 
 // TEST CASES
@@ -163,7 +169,7 @@ console.log(targetTerdekat(["o", " ", " ", " ", "x", "x", "x"])); // 4
 
 console.log(targetTerdekat(["x", "", " ", " ", "x", "x", "o", " "])); // 1
 
-console.log(targetTerdekat([" ", " ", "o", " "])); // 0
+console.log(targetTerdekat([" ", " ", "x", " "])); // 0
 
 console.log(targetTerdekat([" ", "o", " ", "x", "x", " ", " ", "x"])); // 2
 
@@ -223,9 +229,8 @@ const setRupiah2 = (money) => {
             result += mons[i];
         }
     }
-    let revResult = reverse(result);
 
-    return `Rp ${revResult}`;
+    return `Rp ${reverse(result)}`;
 };
 
 // TEST CASES
