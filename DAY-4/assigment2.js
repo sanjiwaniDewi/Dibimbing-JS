@@ -17,14 +17,17 @@ const konversiMenit = (menit) => {
     for (let i = 0; i < index; i++) {
         minute = minute + mins[i];
     }
+    //cara lebih ringkas memperoleh nilai minute
+    // let minute = Math.floor(menit / 60);
 
     //get seconds
     let sec = menit % 60;
     if (!sec.toString()[1]) {
         sec = "0" + sec.toString();
     }
+
     // const seconds = (sec) => {
-    //     return sec.toString().padStart(2, "0"); //nga boleh
+    //     return sec.toString().padStart(2, "0"); //nga boleh digunakan
     // };
 
     return `${minute}:${sec}`;
@@ -116,7 +119,7 @@ console.log(pasanganTerbesar(12783456)); // 83
 
 console.log(pasanganTerbesar(910233)); // 91
 
-console.log(pasanganTerbesar(71856421)); // 85
+console.log(pasanganTerbesar(99856489)); // 85
 
 console.log(pasanganTerbesar(79918293)); // 99
 
@@ -126,10 +129,13 @@ console.log(
 );
 console.log("--------");
 
+//this function just can handle one point with multiple target
 const targetTerdekat = (target) => {
     let distance = [];
     let indexTarget = [];
     let indexPoint = 0;
+
+    //find the position of every target (x) and point (o)
     for (let index = 0; index < target.length; index++) {
         if (target[index] == "o") {
             indexPoint = index + 1;
@@ -137,7 +143,8 @@ const targetTerdekat = (target) => {
             indexTarget.push(index + 1);
         }
     }
-    if (indexTarget.length !== 0 && indexPoint != 0) {
+    //find all distance between targets and point
+    if (indexTarget.length !== 0 && indexPoint !== 0) {
         for (let index = 0; index < indexTarget.length; index++) {
             let dis;
             if (indexTarget[index] > indexPoint) {
@@ -149,14 +156,20 @@ const targetTerdekat = (target) => {
             }
         }
     } else {
+        //handle distance if can't find point
         distance.push(0);
     }
+
+    //find mininun distance
     let minDistance = distance[0];
     for (const dis of distance) {
         if (dis < minDistance) {
             minDistance = dis;
         }
     }
+
+    //cara lebih praktis
+    // return Math.min(...distance);
 
     return minDistance;
 };
@@ -179,9 +192,12 @@ console.log(
 );
 console.log("--------");
 
+//without reverse string
 const setRupiah = (money) => {
     let str = money.toString();
     let result = "";
+
+    //format IDR with length of value % 3 = 0
     if (str.length % 3 == 0) {
         if (str.length == 3) {
             result = str;
@@ -195,6 +211,7 @@ const setRupiah = (money) => {
             }
         }
     } else {
+        //format IDR with length of value % 3 != 0
         let sisa = str.length % 3;
         for (let i = 0; i < str.length; i++) {
             if (
@@ -210,10 +227,11 @@ const setRupiah = (money) => {
     return `Rp ${result}`;
 };
 
-//pakai metode di balik
+//with reverse string
 const setRupiah2 = (money) => {
     let str = money.toString();
     let result = "";
+    //for reverse string
     function reverse(val) {
         let result = "";
         for (let i = val.length - 1; i >= 0; i--) {
@@ -221,7 +239,9 @@ const setRupiah2 = (money) => {
         }
         return result;
     }
+
     let mons = reverse(str);
+    //IDR format
     for (let i = 0; i < mons.length; i++) {
         if ((i + 1) % 3 == 0 && i + 1 < mons.length) {
             result = result + mons[i] + ".";
@@ -240,6 +260,6 @@ console.log(setRupiah2(100000)); // Rp. 100.000
 
 console.log(setRupiah2(1)); // Rp150
 
-console.log(setRupiah2(1205000000)); // Rp 120.500.000
+console.log(setRupiah(120500000)); // Rp 120.500.000
 
-console.log(setRupiah2(5478300)); // Rp 5.478.300
+console.log(setRupiah(5478300)); // Rp 5.478.300
