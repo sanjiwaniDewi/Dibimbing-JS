@@ -175,7 +175,7 @@ const mengelompokkanAngka = (array) => {
 };
 
 // TEST CASES
-console.log(mengelompokkanAngka([2, 4, 6])); // [ [2, 4], [], [6] ]
+console.log(mengelompokkanAngka([2, 6, 6])); // [ [2, 4], [], [6] ]
 console.log(mengelompokkanAngka([1, 2, 3, 4, 5, 6, 7, 8, 9])); // [ [ 2, 4, 8 ], [ 1, 5, 7 ], [ 3, 6, 9 ] ]
 console.log(mengelompokkanAngka([100, 151, 122, 99, 111])); // [ [ 100, 122 ], [ 151 ], [ 99, 111 ] ]
 console.log(mengelompokkanAngka([])); // [ [], [], [] ]
@@ -308,22 +308,23 @@ const handleHobies = (hobies) => {
 };
 
 const PrintDataSiswa = (datas) => {
+    let print = "\n";
     for (let index = 0; index < datas.length; index++) {
-        console.log(`# Siswa ${index + 1}`);
-        console.log(`- no : ${datas[index].no}`);
-        console.log(`- nama : ${datas[index].nama}`);
-        console.log(
-            `- tempat, tanggal lahir : ${
-                datas[index].tempat
-            }, ${monthConversion(datas[index].tanggalLahir)}`
-        );
-        console.log(`- hobi : ${handleHobies(datas[index].hobi)}`);
+        let brithDate = monthConversion(datas[index].tanggalLahir);
+        let brithPlace = datas[index].tempat;
+        let hobies = handleHobies(datas[index].hobi);
+        print += `# Siswa ${index + 1}\n`;
+        print += `- no : ${datas[index].no} \n`;
+        print += `- nama : ${datas[index].nama} \n`;
+        print += `- tempat, tanggal lahir : ${brithPlace}, ${brithDate} \n`;
+        print += `- hobi : ${hobies}\n \n`;
     }
+    return print;
 };
 
 let newStructureData = dataSiswaStructure(data);
 
-PrintDataSiswa(newStructureData);
+console.log(PrintDataSiswa(newStructureData));
 
 // OUTPUT
 /* # Siswa 1
