@@ -5,7 +5,7 @@ console.log("-------------");
 nilai array yang sering muncul (mayoritas) dari daftar nilai array */
 
 // write code here
-//count same same value
+//count duplicate values
 const countMode = (arr) => {
     let mode = {};
     for (let i = 0; i < arr.length; i++) {
@@ -18,7 +18,7 @@ const countMode = (arr) => {
     return mode;
 };
 
-//for search mode
+//search mode
 const findMode = (arr) => {
     let count = 0;
     let mode = 0;
@@ -40,7 +40,7 @@ const MajoritySweeper = (arr) => {
     let mode = findMode(countData);
     let newArr = [];
 
-    //remove mode from new array
+    //exclude mode
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] != mode) {
             newArr.push(arr[i]);
@@ -63,12 +63,12 @@ console.log("-------------");
 nilai array kecuali dirinya sendiri */
 
 // write code here
-//berdasarkan index
 const perkalianUnik = (arr) => {
     let result = [];
     for (let index = 0; index < arr.length; index++) {
         let hasil = 1;
         for (let x = 0; x < arr.length; x++) {
+            //multiply other values except value at index x;
             if (x != index) {
                 hasil = hasil * arr[x];
             }
@@ -95,34 +95,36 @@ Jika nilai yang diinputkan bukan palindrome maka akan mencetak angka
 baru yang sesuai dengan cara ditambahkan satu per satu */
 
 // write code here
-function revVals(val) {
-    let vals = val.toString();
-    let rev = "";
-    for (let index = vals.length - 1; index >= 0; index--) {
-        rev += vals[index];
+//reverse value
+function revVals(value) {
+    let newValue = value.toString();
+    let reverse = "";
+    for (let index = newValue.length - 1; index >= 0; index--) {
+        reverse += newValue[index];
     }
-    return rev;
+    return reverse;
 }
-function makePaindrome(val, reverse) {
-    let vals = 0;
+//add value to become a palindrome
+function createPaindrome(value, reverse) {
+    let newValue = 0;
     let newRev = "";
-    if (val == reverse) {
-        return val;
+    if (value == reverse) {
+        return value;
     } else {
-        vals = val + 1;
-        newRev = revVals(vals);
+        newValue = value + 1;
+        newRev = revVals(newValue);
         //recursive function
-        return makePaindrome(vals, newRev);
+        return createPaindrome(newValue, newRev);
     }
 }
 
-const angkaPalindrome = (val) => {
-    let reverse = revVals(val);
-    let result = makePaindrome(val, reverse);
+const angkaPalindrome = (value) => {
+    let reverse = revVals(value);
+    let result = createPaindrome(value, reverse);
     return result;
 };
 // TEST CASES
-console.log(angkaPalindrome(8)); // 9 //karena 8 palindrome maka boleh pakai
+console.log(angkaPalindrome(8)); // 9 //update yang <10 return dirinya sendiri
 console.log(angkaPalindrome(10)); // 11
 console.log(angkaPalindrome(117)); // 121
 console.log(angkaPalindrome(175)); // 181
@@ -138,7 +140,7 @@ ke-2 adalah bilangan prima dan kelompok ke-3 adalah bilangan yang bisa
 dibagi 3 */
 
 // write code here
-
+//check is value a prime number
 function isPrime(value) {
     let prime = true;
     for (let i = 2; i < value; i++) {
@@ -158,10 +160,13 @@ const mengelompokkanAngka = (array) => {
     let result = [];
     for (let index = 0; index < array.length; index++) {
         if (array[index] % 2 == 0 && array[index] % 3 != 0) {
+            //all values which mod 2 = 0
             mod2.push(array[index]);
         } else if (array[index] % 3 == 0) {
+            //all values which mod 3 = 0
             mod3.push(array[index]);
         }
+        //condition for handle prime numbers 2 & 3 which included in mod 2 or mod 3
         if (array[index] >= 1 && array[index] !== 2 && array[index] !== 3) {
             valPrime = isPrime(array[index]);
             if (valPrime) {
@@ -223,7 +228,7 @@ class StructureData {
         this.hobi = hobi;
     }
 }
-
+//create new data structure
 const dataSiswaStructure = (datas) => {
     const datass = [];
     for (let i = 0; i < datas.students.length; i++) {
@@ -290,6 +295,7 @@ const monthConversion = (date) => {
     return newDateFormat;
 };
 
+// format students hobies
 const handleHobies = (hobies) => {
     let list = "";
     if (typeof hobies === "object") {
