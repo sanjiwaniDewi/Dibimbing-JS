@@ -308,16 +308,15 @@ const handleHobies = (hobies) => {
 };
 
 const PrintDataSiswa = (datas) => {
-    let print = "\n";
+    let print = "";
     for (let index = 0; index < datas.length; index++) {
         let brithDate = monthConversion(datas[index].tanggalLahir);
-        let brithPlace = datas[index].tempat;
         let hobies = handleHobies(datas[index].hobi);
-        print += `# Siswa ${index + 1}\n`;
-        print += `- no : ${datas[index].no} \n`;
-        print += `- nama : ${datas[index].nama} \n`;
-        print += `- tempat, tanggal lahir : ${brithPlace}, ${brithDate} \n`;
-        print += `- hobi : ${hobies}\n \n`;
+        print += `\n# Siswa ${index + 1}`;
+        print += `\n- no : ${datas[index].no}`;
+        print += `\n- nama : ${datas[index].nama}`;
+        print += `\n- tempat, tanggal lahir : ${datas[index].tempat}, ${brithDate}\n`;
+        print += `- hobi : ${hobies}`;
     }
     return print;
 };
