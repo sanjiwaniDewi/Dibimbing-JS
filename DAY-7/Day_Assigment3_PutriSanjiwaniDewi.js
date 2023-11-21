@@ -214,13 +214,16 @@ const data = {
 
 // write code here
 
-function StructureData(nomor, nama, tempat, tanggal, hobi) {
-    this.no = nomor;
-    this.nama = nama;
-    this.tempat = tempat;
-    this.tanggalLahir = tanggal;
-    this.hobi = hobi;
+class StructureData {
+    constructor(nomor, nama, tempat, tanggal, hobi) {
+        this.no = nomor;
+        this.nama = nama;
+        this.tempat = tempat;
+        this.tanggalLahir = tanggal;
+        this.hobi = hobi;
+    }
 }
+
 const dataSiswaStructure = (datas) => {
     const datass = [];
     for (let i = 0; i < datas.students.length; i++) {
