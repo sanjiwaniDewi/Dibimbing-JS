@@ -104,7 +104,7 @@ function revVals(value) {
     }
     return reverse;
 }
-//add value to become a palindrome
+//increment value to become a palindrome
 function createPaindrome(value, reverse) {
     let newValue = 0;
     let newRev = "";
@@ -140,7 +140,7 @@ ke-2 adalah bilangan prima dan kelompok ke-3 adalah bilangan yang bisa
 dibagi 3 */
 
 // write code here
-//check is value a prime number
+//check is value a prime number?
 function isPrime(value) {
     let prime = true;
     for (let i = 2; i < value; i++) {
@@ -166,7 +166,7 @@ const mengelompokkanAngka = (array) => {
             //all values which mod 3 = 0
             mod3.push(array[index]);
         }
-        //condition for handle prime numbers 2 & 3 which included in mod 2 or mod 3
+        //condition for handle prime numbers 2 and 3 which included in mod 2 or mod 3
         if (array[index] >= 1 && array[index] !== 2 && array[index] !== 3) {
             valPrime = isPrime(array[index]);
             if (valPrime) {
@@ -250,7 +250,7 @@ const monthConversion = (date) => {
             monthName = "Februari";
             break;
         case "03":
-            monthName = "Mater";
+            monthName = "Maret";
             break;
         case "04":
             monthName = "April";
@@ -295,7 +295,7 @@ const monthConversion = (date) => {
     return newDateFormat;
 };
 
-// format students hobies
+// reformat student hobies
 const handleHobies = (hobies) => {
     let list = "";
     if (typeof hobies === "object") {
@@ -314,22 +314,22 @@ const handleHobies = (hobies) => {
 };
 
 const PrintDataSiswa = (datas) => {
+    // new structure data
+    let newData = dataSiswaStructure(datas);
     let print = "";
-    for (let index = 0; index < datas.length; index++) {
-        let brithDate = monthConversion(datas[index].tanggalLahir);
-        let hobies = handleHobies(datas[index].hobi);
+    for (let index = 0; index < newData.length; index++) {
+        let brithDate = monthConversion(newData[index].tanggalLahir);
+        let hobies = handleHobies(newData[index].hobi);
         print += `\n# Siswa ${index + 1}`;
-        print += `\n- no : ${datas[index].no}`;
-        print += `\n- nama : ${datas[index].nama}`;
-        print += `\n- tempat, tanggal lahir : ${datas[index].tempat}, ${brithDate}\n`;
+        print += `\n- no : ${newData[index].no}`;
+        print += `\n- nama : ${newData[index].nama}`;
+        print += `\n- tempat, tanggal lahir : ${newData[index].tempat}, ${brithDate}\n`;
         print += `- hobi : ${hobies}`;
     }
     return print;
 };
 
-let newStructureData = dataSiswaStructure(data);
-
-console.log(PrintDataSiswa(newStructureData));
+console.log(PrintDataSiswa(data));
 
 // OUTPUT
 /* # Siswa 1
