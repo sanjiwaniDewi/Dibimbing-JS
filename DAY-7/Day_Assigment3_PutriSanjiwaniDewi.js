@@ -26,7 +26,7 @@ const findMode = (arr) => {
         if (arr[key] > count) {
             count = arr[key];
             mode = key;
-        } else if (arr[key] == count) {
+        } else if (arr[key] === count) {
             if (key > mode) {
                 mode = key;
             }
@@ -69,7 +69,7 @@ const perkalianUnik = (arr) => {
         let hasil = 1;
         for (let x = 0; x < arr.length; x++) {
             //multiply other values except value at index x;
-            if (x != index) {
+            if (x !== index) {
                 hasil = hasil * arr[x];
             }
         }
@@ -120,8 +120,7 @@ function createPaindrome(value, reverse) {
 
 const angkaPalindrome = (value) => {
     let reverse = revVals(value);
-    let result = createPaindrome(value, reverse);
-    return result;
+    return createPaindrome(value, reverse);
 };
 // TEST CASES
 console.log(angkaPalindrome(8)); // 9 //update yang <10 return dirinya sendiri
@@ -144,7 +143,7 @@ dibagi 3 */
 function isPrime(value) {
     let prime = true;
     for (let i = 2; i < value; i++) {
-        if (value % i == 0) {
+        if (value % i === 0) {
             return (prime = false);
         }
     }
@@ -159,10 +158,10 @@ const mengelompokkanAngka = (array) => {
     let valPrime = false;
     let result = [];
     for (let index = 0; index < array.length; index++) {
-        if (array[index] % 2 == 0 && array[index] % 3 != 0) {
+        if (array[index] % 2 === 0 && array[index] % 3 !== 0) {
             //all values which mod 2 = 0
             mod2.push(array[index]);
-        } else if (array[index] % 3 == 0) {
+        } else if (array[index] % 3 === 0) {
             //all values which mod 3 = 0
             mod3.push(array[index]);
         }
@@ -286,7 +285,7 @@ const monthConversion = (date) => {
     while (i < date.length) {
         if (i < 2 || i > 5) {
             newDateFormat += date[i];
-        } else if (i == 2) {
+        } else if (i === 2) {
             newDateFormat += ` ${monthName} `;
         }
         i++;
