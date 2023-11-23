@@ -9,11 +9,7 @@ nilai array yang sering muncul (mayoritas) dari daftar nilai array */
 const countMode = (arr) => {
     let mode = {};
     for (let i = 0; i < arr.length; i++) {
-        if (mode[arr[i]]) {
-            mode[arr[i]]++;
-        } else {
-            mode[arr[i]] = 1;
-        }
+        mode[arr[i]] ? mode[arr[i]]++ : (mode[arr[i]] = 1);
     }
     return mode;
 };
@@ -27,9 +23,7 @@ const findMode = (arr) => {
             count = arr[key];
             mode = key;
         } else if (arr[key] === count) {
-            if (key > mode) {
-                mode = key;
-            }
+            key > mode ? (mode = key) : mode;
         }
     }
     return mode;
@@ -42,9 +36,7 @@ const MajoritySweeper = (arr) => {
 
     //exclude mode
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] != mode) {
-            newArr.push(arr[i]);
-        }
+        arr[i] != mode ? newArr.push(arr[i]) : newArr;
     }
     return newArr;
 };
@@ -69,9 +61,7 @@ const perkalianUnik = (arr) => {
         let hasil = 1;
         for (let x = 0; x < arr.length; x++) {
             //multiply other values except value at index x;
-            if (x !== index) {
-                hasil = hasil * arr[x];
-            }
+            x !== index ? (hasil = hasil * arr[x]) : hasil;
         }
         result.push(hasil);
     }
@@ -143,9 +133,7 @@ dibagi 3 */
 function isPrime(value) {
     let prime = true;
     for (let i = 2; i < value; i++) {
-        if (value % i === 0) {
-            return (prime = false);
-        }
+        value % i === 0 ? (prime = false) : (prime = prime);
     }
 
     return prime;
@@ -168,9 +156,7 @@ const mengelompokkanAngka = (array) => {
         //condition for handle prime numbers 2 and 3 which included in mod 2 or mod 3
         if (array[index] >= 1 && array[index] !== 2 && array[index] !== 3) {
             valPrime = isPrime(array[index]);
-            if (valPrime) {
-                prime.push(array[index]);
-            }
+            valPrime ? prime.push(array[index]) : prime;
         }
     }
     result = [mod2, prime, mod3];
@@ -299,11 +285,9 @@ const handleHobies = (hobies) => {
     let list = "";
     if (typeof hobies === "object") {
         for (let index = 0; index < hobies.length; index++) {
-            if (index < hobies.length - 1) {
-                list += hobies[index] + ", ";
-            } else {
-                list += hobies[index];
-            }
+            index < hobies.length - 1
+                ? (list += hobies[index] + ", ")
+                : (list += hobies[index]);
         }
     } else {
         list = hobies;
