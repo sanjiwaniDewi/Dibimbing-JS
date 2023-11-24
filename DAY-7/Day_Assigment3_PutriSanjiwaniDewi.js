@@ -281,6 +281,7 @@ const monthConversion = (date) => {
 };
 
 // reformat student hobies
+//add space between data
 const handleHobies = (hobies) => {
     let list = "";
     if (typeof hobies === "object") {
