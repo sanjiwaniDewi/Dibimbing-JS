@@ -17,8 +17,8 @@ function countVowels(str, vowels) {
     let count = 0;
     for (const letter of str) {
         for (const vowel of vowels) {
-            //untuk menghitung jumlah huruf fokal
-            //dan jika terdapat hurup besar vokal
+            //untuk menghitung jumlah huruf vokal
+            //dan kondisi jika terdapat hurup besar vokal
             if (letter === vowel || letter === vowel.toUpperCase()) {
                 count++;
             }

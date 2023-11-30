@@ -17,7 +17,7 @@ function manipulateString(str) {
         let res = "";
         for (const letter of upperCase) {
             if (i !== 0 && str[i] === letter) {
-                //penambahan spasi pada huruf uppercase yang bukan di awal kalimat
+                //penambahan spasi sebelum huruf uppercase yang bukan di awal kalimat
                 res = " " + str[i];
                 break;
             } else {
