@@ -10,15 +10,13 @@ const mostFrequentLargestNumbers = (arr) => {
     let max = 0;
     let min = arr[0];
     if (arr[0]) {
-        //menghitung jumlah duplikat tiap value
+        //count duplicates
         for (let i = 0; i < arr.length; i++) {
             count[arr[i]] ? count[arr[i]]++ : (count[arr[i]] = 1);
         }
-        //mencari nilai maksimumnya dari array
+        //searched maximum value
         for (const item of arr) {
-            if (item > max) {
-                max = item;
-            }
+            item > max ? (max = item) : max;
         }
 
         return `angka paling besar adalah ${max} dan jumlah kemunculan sebanyak ${count[max]}`;
@@ -59,12 +57,13 @@ function genChar(charA, charZ) {
     return a;
 }
 
-//pake meethod lowercase upercase boleh
 function convertCase(text) {
     let result = "";
+    //generated alphabet array
     const upperCase = genChar("A", "Z");
     const lowerCase = genChar("a", "z");
-    for (let index = 0; index < text.length; index++) {
+
+    for (let index = text.length - 1; index >= 0; index--) {
         let changes = "";
         for (let j = 0; j < upperCase.length; j++) {
             if (text[index] == lowerCase[j] || text[index] == upperCase[j]) {
@@ -100,14 +99,9 @@ function convertCase(text) {
 }
 
 const passwordGenerator = (text) => {
-    let result = "";
+    let result = convertCase(text);
     let length = text.length;
-
     if (length >= 5) {
-        let formatCase = convertCase(text);
-        for (let i = formatCase.length - 1; i >= 0; i--) {
-            result += formatCase[i];
-        }
         return result;
     } else {
         return `Minimal karakter yang diinputkan adalah 5 karakter`;
@@ -130,7 +124,8 @@ console.log("-------------");
 function price(from, to) {
     let distFrom = 0;
     let distTo = 0;
-    let alphabete = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    //reuseable function form case 2
+    let alphabete = genChar("A", "Z");
     for (let index = 0; index < alphabete.length; index++) {
         if (alphabete[index] == from) {
             distFrom = index;
@@ -194,38 +189,36 @@ console.log("-------------");
 // - Member yang berbelanja di toko Makmur akan membeli barang yang paling mahal terlebih dahulu dan akan membeli barang-barang yang sedang SALE masing-masing 1 jika uang yang dimilikinya masih cukup.
 
 //Write code here
-function valdated(valid, cheapest) {
-    if (typeof valid == "number") {
-        if (valid < cheapest) {
-            //jika balance kurang dari barang termurah yang dijual
-            return `invalidCountBalance`;
-        } else {
-            return `isValid`;
-        }
-    } else if (valid) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function productCanBuy(balance, stock) {
+function productCanBuy(balance, stock, product) {
+    let products = product;
     let total = balance;
-    let productList = [];
-    //mencari yang termahal
-    for (const key in stock) {
-        let gap = 0;
-        for (const x in stock) {
-            if (key != x && stock[key] > stock[x]) {
-                productList.push(key);
+    if (JSON.stringify(stock) === "{}") {
+        products.unshift(total);
+        return products;
+    } else {
+        let maxPrice = 0;
+        let prod = "";
+        for (const key in stock) {
+            if (maxPrice < stock[key]) {
+                maxPrice = stock[key];
+                prod = key;
             }
         }
+        if (total > maxPrice) {
+            products.push(prod);
+            total -= maxPrice;
+        }
+        const newStock = {};
+        for (const key in stock) {
+            if (key !== prod) {
+                newStock[key] = stock[key];
+            }
+        }
+        return productCanBuy(total, newStock, products);
     }
-    productList.unshift(total);
-    return productList;
 }
 
-const shoppingTime = (member, balance) => {
+const shoppingTime = (memberId, balance) => {
     const productStock = {
         "Gula Pasir": 15000,
         Beras: 12000,
@@ -233,46 +226,30 @@ const shoppingTime = (member, balance) => {
         "Minyak Goreng": 18500,
         "Telor Ayam": 24600,
     };
-    let cheap = 0;
-    for (const key in productStock) {
-        if (cheap == 0 || cheap > productStock[key]) {
-            cheap = productStock[key];
-        }
+    let trancastion = {
+        memberId,
+    };
+
+    if (memberId == "" || memberId === undefined) {
+        return "mohon maaf toko X hanya berlaku untuk member saja";
     }
-    let isMemberValid = valdated(member);
-    let isBalanceValid = valdated(balance, cheap);
-    let trancastion = {};
-
-    let productYouHave = productCanBuy(balance, productStock);
-    //destructuring array
-    const [change, ...products] = productYouHave;
-
-    if (!isMemberValid) {
-        return `Mohon maaf, toko X hanya berlaku untuk member saja`;
+    if (balance < 2500 || balance === undefined) {
+        return "mohon maaf, uang tidak cukup";
     } else {
-        if (isBalanceValid == `isValid`) {
-            trancastion.memberId = member;
-            trancastion.money = balance;
-            trancastion.listPurchased = products;
-            trancastion.changesMoney = change;
-        } else if (isBalanceValid == "invalidCountBalance") {
-            return `Mohon maaf, uang tidak cukup`;
-        }
+        let money = balance;
+        const produtsAndPrice = productCanBuy(balance, productStock, []);
+        const [changeMoney, ...listPurchased] = produtsAndPrice;
+        trancastion = {
+            ...trancastion,
+            money,
+            listPurchased,
+            changeMoney,
+        };
+        return trancastion;
     }
-    return trancastion;
-
-    // console.log("is member >> " + isMemberValid);
-    // console.log("is Balance  >> " + isBalanceValid);
-    // return;
 };
 // TEST CASES
-console.log(shoppingTime("13KasdfG3D", 0));
-console.log(shoppingTime("13KasdfG3D", 25700));
-//{ memberId: '13KasdfG3D',
-// money: 30000,
-// listPurchased:
-// [ 'Telor Ayam', ‘Mie Ayam’ ],
-// changeMoney: 2900 }
+console.log(shoppingTime("13KasdfG3D", 0)); //Mohon maaf, uang tidak cukup
 console.log(shoppingTime("12kTsasdAl", 75000));
 //{ memberId: 12kTsasdAl,
 // money: 75000,
@@ -289,10 +266,10 @@ console.log(shoppingTime("13KasdfG3D", 30000));
 // listPurchased:
 //  [ 'Telor Ayam', ‘Mie Ayam’ ],
 // changeMoney: 2900 }
-console.log(shoppingTime("", 25700));
-// //Mohon maaf, toko X hanya berlaku untuk member saja
+console.log(shoppingTime("", 1500)); //Mohon maaf, toko X hanya berlaku untuk member saja
 console.log(shoppingTime("234JdRxa53", 1500)); //Mohon maaf, uang tidak cukup
 console.log(shoppingTime()); //Mohon maaf, toko X hanya berlaku untuk member saja
+console.log(shoppingTime("234JdRxa53"));
 
 console.log("-------------");
 console.log("5. graduates");
@@ -323,24 +300,18 @@ const graduates = (arr) => {
     }
     return sameClass;
 };
-
 // TEST CASES
 console.log(
     graduates([
         { name: "Luffi", score: 90, class: "2A" },
-
         { name: "Sanji", score: 85, class: "2C" },
-
         { name: "Zoro", score: 74, class: "2A" },
-
         { name: "Usop", score: 78, class: "2C" },
     ])
 );
-
 //OUTPUT
 // { 2A: [ { name: 'Luffi', score: 90 } ],
 // 2C: [ { name: 'Sanji' , score: 85 }, { name: 'Usop', score: 78 } ] }
-
 console.log(
     graduates([
         { name: "Naruto", score: 100, class: "ninja" },
@@ -355,7 +326,6 @@ console.log(
 //   olahraga: [ { name: 'Sarada', score: 76 }, ],
 //   catur: [ { name: 'Shikamaru', score: 80 } ]
 // }
-
 console.log(graduates([]));
 //OUTPUT
 //{}
