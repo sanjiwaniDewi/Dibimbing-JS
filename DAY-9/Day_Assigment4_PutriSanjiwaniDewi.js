@@ -8,7 +8,6 @@ console.log("-------------");
 const mostFrequentLargestNumbers = (arr) => {
     let count = {};
     let max = 0;
-    let min = arr[0];
     if (arr[0]) {
         //count duplicates
         for (let i = 0; i < arr.length; i++) {
@@ -41,7 +40,7 @@ console.log("-------------");
 console.log("2. Password Generator");
 console.log("-------------");
 // [INSTRUCTIONS] Anda diminta untuk membuat sebuah function untuk mengenkripsi sebuah password dengan ketentuan sebagai berikut:
-// - Mengubah hufuf besar menjadi kecil dan sebaliknya
+// - Mengubah huruf besar menjadi kecil dan sebaliknya
 // - menghilangkan spasi dan menggantinya menjadi ‘&’
 // - setiap bertemu huruf vocal harus diganti dengan huruf selanjutnya(+1) sesuai urutan alfabet
 // - membalik urutan huruf
@@ -178,11 +177,11 @@ console.log("4. shoppingTime");
 console.log("-------------");
 // 4. shoppingTime[INSTRUCTIONS]Anda diminta untuk membuat sebuah function untuk menghitung berapa banyak yang bisa dibelanjakan dari saldo tersebutketentuan sebagai berikut:
 // - Toko Makmur sedang melakukan SALE untuk beberapa barang, yaitu:
-// // Gula Pasir seharga 15000
-// // Beras seharga 12000
-// // Mie Instan seharga 2500
-// // Minyak Goreng seharga 18500
-// // Telor Ayam seharga 24600
+// Gula Pasir seharga 15000
+// Beras seharga 12000
+// Mie Instan seharga 2500
+// Minyak Goreng seharga 18500
+// Telor Ayam seharga 24600
 // - output berupa object dimana object tersebut berisikan informasi memberId, money, listPurchased dan changeMoney.
 // - Jika memberId kosong maka tampilkan "Mohon maaf, toko X hanya berlaku untuk member saja"
 // - Jika uang yang dimiliki kurang dari 2500 maka tampilkan "Mohon maaf, uang tidak cukup"
@@ -190,11 +189,11 @@ console.log("-------------");
 
 //Write code here
 function productCanBuy(balance, stock, product) {
-    let products = product;
+    let basket = product;
     let total = balance;
-    if (JSON.stringify(stock) === "{}") {
-        products.unshift(total);
-        return products;
+    if (JSON.stringify(stock) === "{}" || total === 0) {
+        basket.unshift(total);
+        return basket;
     } else {
         let maxPrice = 0;
         let prod = "";
@@ -204,17 +203,18 @@ function productCanBuy(balance, stock, product) {
                 prod = key;
             }
         }
-        if (total > maxPrice) {
-            products.push(prod);
+        if (total >= maxPrice) {
+            basket.push(prod);
             total -= maxPrice;
         }
+        //remove the product that has been added in basket
         const newStock = {};
         for (const key in stock) {
             if (key !== prod) {
                 newStock[key] = stock[key];
             }
         }
-        return productCanBuy(total, newStock, products);
+        return productCanBuy(total, newStock, basket);
     }
 }
 
@@ -226,26 +226,35 @@ const shoppingTime = (memberId, balance) => {
         "Minyak Goreng": 18500,
         "Telor Ayam": 24600,
     };
-    let trancastion = {
+    let transaction = {
         memberId,
     };
+    //search minimum price
+    let min = 0;
+    for (const key in productStock) {
+        if (min == 0 || min > productStock[key]) {
+            min = productStock[key];
+        }
+    }
 
     if (memberId == "" || memberId === undefined) {
         return "mohon maaf toko X hanya berlaku untuk member saja";
     }
-    if (balance < 2500 || balance === undefined) {
+    if (balance < min || balance === undefined) {
+        //member can't buy a product if they don't have enough balance to buy the cheapest products in stock
         return "mohon maaf, uang tidak cukup";
     } else {
         let money = balance;
-        const produtsAndPrice = productCanBuy(balance, productStock, []);
-        const [changeMoney, ...listPurchased] = produtsAndPrice;
-        trancastion = {
-            ...trancastion,
+        const produtsAndChangeMoney = productCanBuy(balance, productStock, []);
+        //descructuring array
+        const [changeMoney, ...listPurchased] = produtsAndChangeMoney;
+        transaction = {
+            ...transaction,
             money,
             listPurchased,
             changeMoney,
         };
-        return trancastion;
+        return transaction;
     }
 };
 // TEST CASES
@@ -267,9 +276,9 @@ console.log(shoppingTime("13KasdfG3D", 30000));
 //  [ 'Telor Ayam', ‘Mie Ayam’ ],
 // changeMoney: 2900 }
 console.log(shoppingTime("", 1500)); //Mohon maaf, toko X hanya berlaku untuk member saja
-console.log(shoppingTime("234JdRxa53", 1500)); //Mohon maaf, uang tidak cukup
+console.log(shoppingTime("234JdRxa53", 2500));
 console.log(shoppingTime()); //Mohon maaf, toko X hanya berlaku untuk member saja
-console.log(shoppingTime("234JdRxa53"));
+console.log(shoppingTime("234JdRxa53")); //Mohon maaf, uang tidak cukup
 
 console.log("-------------");
 console.log("5. graduates");
@@ -287,13 +296,14 @@ const graduates = (arr) => {
     for (const student of arr) {
         if (student.score >= 75) {
             if (!sameClass[student.class]) {
+                //descructuring object
                 const { name, score } = student;
-                sameClass[student.class] = [{ name: name, score: score }];
+                sameClass[student.class] = [{ name, score }];
             } else {
                 const { name, score } = student;
                 sameClass[student.class].push({
-                    name: name,
-                    score: score,
+                    name,
+                    score,
                 });
             }
         }
