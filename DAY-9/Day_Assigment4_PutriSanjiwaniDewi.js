@@ -88,9 +88,9 @@ function convertCase(text) {
                     changes = upperCase[j];
                 }
             }
-            if (text[index] == " ") {
-                changes = "&";
-            }
+            // if (text[index] == " ") {
+            //     changes = "&";
+            // }
         }
         result += changes;
     }
