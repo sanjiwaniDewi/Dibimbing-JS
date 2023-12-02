@@ -98,10 +98,9 @@ function convertCase(text) {
 }
 
 const passwordGenerator = (text) => {
-    let result = convertCase(text);
     let length = text.length;
     if (length >= 5) {
-        return result;
+        return convertCase(text);
     } else {
         return `Minimal karakter yang diinputkan adalah 5 karakter`;
     }
@@ -277,6 +276,12 @@ console.log(shoppingTime("13KasdfG3D", 30000));
 // changeMoney: 2900 }
 console.log(shoppingTime("", 1500)); //Mohon maaf, toko X hanya berlaku untuk member saja
 console.log(shoppingTime("234JdRxa53", 2500));
+// {
+//   memberId: '234JdRxa53',
+//   money: 2500,
+//   listPurchased: [ 'Mie Instan' ],
+//   changeMoney: 0
+// }
 console.log(shoppingTime()); //Mohon maaf, toko X hanya berlaku untuk member saja
 console.log(shoppingTime("234JdRxa53")); //Mohon maaf, uang tidak cukup
 
