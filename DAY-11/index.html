@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- content yang tidak terlihat di browser -->
+    <!-- meta opsional untuk di tulis ngaruh di SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to HTML: HyperText Markup Language</title>
+  </head>
+  <body>
+    <!-- yang terlihat di browser -->
+    <header>
+      <!-- h1, h2, h3 direkomendasikan hanya ada 1 -->
+      <!-- untuk menandakan judul yang paling penting pada web -->
+      <h1>📘 Dibimbing Articles</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Content</a>
+        <a href="./blog.html">Blog</a>
+      </nav>
+    </header>
+
+    <article>
+      <header>
+        <h2>Introduction to HTML: HyperText Markup Language</h2>
+        <img src="./assets/images/profile-picture.png" width="50" height="50"
+          alt="foto profil">
+        <p>Posted by <strong>Fajar Saputro Juliantoro</strong> on Monday,
+          January
+          21st 2027</p>
+        <!-- <p>Posted by <em>Fajar Saputro Juliantoro</em> on Monday, January
+        21st 2027</p>
+      <p>Posted by <i>Fajar Saputro Juliantoro</i> on Monday, January
+        21st 2027</p>
+      <p>Posted by <b>Fajar Saputro Juliantoro</b> on Monday, January
+        21st 2027</p> -->
+        <img src="./assets/images/post-image.jpg" width="500" height="200"
+          alt="post image" />
+      </header>
+      <p>All modern websites and web applications are built using three
+        <em>fundamental</em> technologies: HTML, CSS and JavaScript. These are
+        the languages of the web.</p>
+
+      <p>In this post, let's focus on HTML. We will learn what HTML is all
+        about, and why you too should learn it.</p>
+
+      <video controls width="300px">
+        <source src="./assets/media/flower.webm" type="video/webm" />
+        <source src="./assets/media/flower.mp4" type="video/mp4" />
+      </video>
+
+      <h3>What is HTML?</h3>
+
+      <p>HTML stands for <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup
+        <strong>L</strong>anguage.
+        It's a markup language that web developers use to structure and describe
+        the content of a webpage (not a programming language).</p>
+
+      <p>HTML consists of elements that describe different types of content:
+        paragraphs, links, headings, images, video, etc. Web browsers understand
+        HTML and render HTML code as websites.</p>
+
+      <p>In HTML, each element is made up of 3 parts:</p>
+
+      <ol>
+        <li>The opening tag</li>
+        <li>The closing tag</li>
+        <li>The actual element</li>
+      </ol>
+
+      <p>You can learn more at <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+          target="_blank">MDN Web Docs</a></p>
+
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/2lDcyfgIJLs?si=R5qK0wkrxdaBpow3">
+      </iframe>
+      <h4>Why should you learn HTML?</h4>
+
+      <p>There are countless reasons for learning the fundamental language of
+        the web. Here are 5 of them:</p>
+
+      <ul>
+        <li>To be able to use the fundamental web dev language</li>
+        <li>To hand-craft beautiful websites instead of relying on tools like
+          Worpress or Wix</li>
+        <li>To build web applications</li>
+        <li>To impress friends</li>
+        <li>To have fun 😃, or</li>
+      </ul>
+      <figure>
+        <figcaption>listen to the audio:</figcaption>
+        <audio controls src="./assets/media/t-rex-roar.mp3">
+          <!-- link ini akan muncul ketika audio tidak di suport bowser -->
+          <a href="./assets/media/t-rex-roar.mp3">Download Audio</a>
+        </audio>
+      </figure>
+      <p>Hopefully you learned something new here. See you next time!</p>
+      <aside>
+        <h4>Related Posts</h4>
+        <ul>
+          <li>
+            <img src="./assets/images/related-post-1.jpg" alt="post image"
+              height="75" width="75">
+            <a href="#">Create Stunning Ecommerce Website Design</a>
+            <p><em>By Muhammad Rahmatullah</em></p>
+          </li>
+          <li> <img src="./assets/images/related-post-1.jpg" alt="post image 1"
+              height="75" width="75">
+            <a href="#">Top 10 Front-End principles you need to know</a>
+            <p><em>By Hary Suryanto</em></p></li>
+          <li> <img src="./assets/images/related-post-2.jpg" alt="post image 2"
+              height="75" width="75">
+            <a href="#">How to planning your Front-End Development</a>
+            <p><em>By Fajar Saputro Juliantoro</em></p></li>
+        </ul>
+      </aside>
+    </article>
+    <footer>
+      <p>Copyright &copy 2023 by Fajar Saputro Juliantoro</p>
+    </footer>
+  </body>
+</html>
