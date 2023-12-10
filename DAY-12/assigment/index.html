@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment: Main Blog Page - PutriSanji</title>
+  </head>
+  <body>
+    <header>
+      <h1>📘 Dibimbing Articles</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+        <form>
+          <label for="pageSearch">Search : </label>
+          <input type="search" id="pageSearch" name="pageSearch">
+          <input type="submit">
+        </form>
+      </nav>
+    </header>
+    <article>
+      <header>
+        <h2>Introduction to HTML: HyperText Markup Language</h2>
+        <video controls width="500">
+          <source src="./assets/media/flower.webm" type="video/webm">
+          <source src="./assets/media/flower.mp4" type="video/mp4">
+        </video>
+        <p>Posted by PSanji on Monday, December 10th, 2023</p>
+      </header>
+      <p>All modern websites and web applications are built using three
+        fundamental technologies: HTML, CSS and JavaScript. These are the
+        languages of the web.</p>
+
+      <p>In this post, let's focus on HTML. We will learn what HTML is all
+        about, and why you too should learn it.</p>
+
+      <!-- using h2 because in pic look same size with h2 in header -->
+      <h2>What is HTML?</h2>
+
+      <p>HTML stands for HyperText Markup Language. It's a markup language that
+        web developers use to structure and describe the content of a webpage
+        (not a programming language).</p>
+
+      <p>HTML consists of elements that describe different types of content:
+        paragraphs, links, headings, images, video, etc. Web browsers understand
+        HTML and render HTML code as websites.
+      </p>
+
+      <p>In HTML, each element is made up of 3 parts:</p>
+
+      <ul>
+        <li>The opening tag</li>
+        <li>The closing tag</li>
+        <li>The actual element</li>
+      </ul>
+
+      <p>Listen to the Audio:</p>
+      <figure>
+        <figcaption>Listen to the Audio:</figcaption>
+        <audio controls src="./assets/media/t-rex-roar.mp3">
+          <a href="./assets/media/t-rex-roar.mp3">Download Audio</a>
+        </audio>
+      </figure>
+
+      <p>Hopefully, you learned something new here. See you next time!</p>
+      <p>You can learn more at <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+          target="_blank">MDN Web Docs</a></p>
+
+      <h2>Why should you learn HTML?</h2>
+
+      <p>There are countless reasons for learning the fundamental language of
+        the web. Here are 5 of them:</p>
+      <ol>
+        <li>To be able to use the fundamental web dev language</li>
+        <li>To hand-craft beautiful websites instead of relying on tools like
+          Wordpress or Wix</li>
+        <li>To build web applications</li>
+        <li>To impress friends</li>
+        <li>To have fun 😃</li>
+      </ol>
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/4V5zmxevaiM?si=r3DA9F_0hnoLfod4"></iframe>
+
+      <p>Hopefully, you learned something new here. See you next time!</p>
+      <section>
+        <h2>HTML Elements Table</h2>
+        <table style="width: 60%;" border="1" cellpadding="8">
+          <tr>
+            <th>Element</th>
+            <th>Descriptions</th>
+            <th>Example</th>
+            <th>Attributs</th>
+          </tr>
+          <tr>
+            <td><code>&lt;p&gt;</code></td>
+            <td>Defines a paragraph</td>
+            <td colspan="2"><code>&lt;p&gt;This is a paragraph &lt;p&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;a&gt;</code></td>
+            <td>Defines a hyperlink</td>
+            <td><code>&lt;a href="#" &gt;</code> <code>&lt;/a&gt;</code></td>
+            <td>href, target, title</td>
+          </tr>
+          <tr>
+            <td><code>&lt;h1&gt;</code> or <code>&lt;h6&gt;</code></td>
+            <td>Defines headings of different levels</td>
+            <td rowspan="2"><code>&lt;h1&gt; Heading 1 &lt;/h1&gt;</code></td>
+            <td rowspan="2">None</td>
+          </tr>
+          <tr>
+            <td><code>&lt;img&gt;</code></td>
+            <td>Embeds an image</td>
+          </tr>
+          <tr>
+            <td><code>&lt;video&gt;</code></td>
+            <td>Embeds a video</td>
+            <td><code>&lt;video src="video.mp4" controls&gt; &lt;/video&gt;</code></td>
+            <td>src, controls, width, height</td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h2>Contact Form</h2>
+
+        <form>
+          <table style="width: 50%;">
+            <tr>
+              <td>
+                <label>Name:
+                  <input type="text" name="name" placeholder="Your name"
+                    size="35">
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>Email:
+                  <input type="text" name="name" placeholder="Your email"
+                    size="35">
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label> Message :
+                  <textarea placeholder="Your message...."
+                    style="width:19em; height: 5em;"></textarea>
+                </label>
+              </td>
+            </tr>
+          </table>
+          <fieldset style="width: 40%;">
+            <legend>Additional Information</legend>
+            <label>Gender:
+              <input type="radio" name="radio" value="male"> Male
+              <input type="radio" name="radio" value="female">Female</label>
+            <br>
+            <label>Interest:
+              <input type="checkbox" name="checkbox" value="coding"> Coding
+              <input type="checkbox" name="checkbox" value="design"> Design
+              <input type="checkbox" name="checkbox" value="music"> Music
+            </label>
+          </fieldset>
+          <br>
+          <input type="submit" value="Submit">
+        </form>
+      </section>
+
+      <aside>
+        <h2>Dibimbing Articles</h2>
+        <ul>
+          <li>
+            <img src="./assets/images/related-post-1.jpg" alt="post image 1"
+              width="75" height="75">
+            <a href="#">Create Stunning Ecommerce Website Design</a>
+            <br>
+            <span>By Muhammad Rahmatullah</span>
+          </li>
+          <li>
+            <img src="./assets/images/related-post-2.jpg" alt="post image 2"
+              width="75" height="75">
+            <a href="#">Top 10 Front-End principles you need to know</a>
+            <br>
+            <span>By Hary Suryanto</span>
+          </li>
+          <li>
+            <img src="./assets/images/related-post-3.jpg" alt="post image 3"
+              width="75" height="75">
+            <a href="#">How to planning your Front-End Development</a>
+            <br>
+            <span>By PutriSanji</span>
+          </li>
+        </ul>
+      </aside>
+      <aside>
+        <h2>Related Posted</h2>
+        <ul>
+          <li>
+            <img src="./assets/images/related-post-1.jpg" alt="post image 1"
+              width="75" height="75">
+            <a href="#">Create Stunning Ecommerce Website Design</a>
+            <br>
+            <span>By Muhammad Rahmatullah</span>
+          </li>
+          <li>
+            <img src="./assets/images/related-post-2.jpg" alt="post image 2"
+              width="75" height="75">
+            <a href="#">Top 10 Front-End principles you need to know</a>
+            <br>
+            <span>By Hary Suryanto</span>
+          </li>
+          <li>
+            <img src="./assets/images/related-post-3.jpg" alt="post image 3"
+              width="75" height="75">
+            <a href="#">How to planning your Front-End Development</a>
+            <br>
+            <span>By PutriSanji</span>
+          </li>
+        </ul>
+      </aside>
+      <footer>
+        <center>&copy; 2023 PutriSanji |<a href="#">
+            LinkedIn</a></center>
+      </footer>
+    </article>
+  </body>
+</html>

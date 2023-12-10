@@ -1,0 +1,113 @@
+📘 Dibimbing Articles
+
+Home
+About
+Contact
+Blog
+
+Search:
+
+Introduction to HTML: HyperText Markup Language
+Posted by {your_name} on Monday, January 21st, 2027
+
+All modern websites and web applications are built using three fundamental technologies: HTML, CSS and JavaScript. These are the languages of the web.
+
+In this post, let's focus on HTML. We will learn what HTML is all about, and why you too should learn it.
+
+What is HTML?
+HTML stands for HyperText Markup Language. It's a markup language that web developers use to structure and describe the content of a webpage (not a programming language).
+
+HTML consists of elements that describe different types of content: paragraphs, links, headings, images, video, etc. Web browsers understand HTML and render HTML code as websites.
+
+In HTML, each element is made up of 3 parts:
+  - The opening tag
+  - The closing tag
+  - The actual element
+
+Listen to the Audio:
+Download audio
+
+Hopefully, you learned something new here. See you next time!
+You can learn more at MDN Web Docs
+
+Why should you learn HTML?
+There are countless reasons for learning the fundamental language of the web. Here are 5 of them:
+  1. To be able to use the fundamental web dev language
+  2. To hand-craft beautiful websites instead of relying on tools like Wordpress or Wix
+  3. To build web applications
+  4. To impress friends
+  5. To have fun 😃
+
+Hopefully, you learned something new here. See you next time!
+
+HTML Elements Table
+
+Element
+Description
+Example
+Attributes
+
+<p>
+Defines a paragraph
+<p>This is a paragraph</p>
+<a>
+Defines a hyperlink
+<a href="#"></a>
+href, target, title
+
+<h1> to <h6>
+Defines headings of different levels
+<h1>Heading 1</h1>
+None
+
+<img>
+Embeds an image
+
+<video>
+Embeds a video
+<video src="video.mp4" controls></video>
+src, controls, width, height
+
+Contact Form
+
+Name:
+Email:
+Message:
+
+Additional Information
+
+Gender:
+Male
+Female
+
+Interests:
+Coding
+Design
+Music
+
+Submit
+
+Dibimbing Articles
+
+Create Stunning Ecommerce Website Design
+By Muhammad Rahmatullah
+
+Top 10 Front-End principles you need to know
+By Hary Suryanto
+
+How to planning your Front-End Development
+By {your_name}
+
+Related Posts
+
+Create Stunning Ecommerce Website Design
+By Muhammad Rahmatullah
+
+Top 10 Front-End principles you need to know
+By Hary Suryanto
+
+How to planning your Front-End Development
+By {your_name}
+
+© 2023 {your_name} |
+LinkedIn
