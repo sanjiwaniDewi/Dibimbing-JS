@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Tables</title>
   </head>
-  <body></body>
+  <body>
+    <table border="1" cellpadding="5" cellspacing="5">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2">Sanji</td>
+          <td>dewisanjiw@gmail.com</td>
+        </tr>
+        <tr>
+          <td>dewo</td>
+          <td>surya</td>
+          <td rowspan="2">dewowibowo@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Haryo</td>
+          <td>wibowo</td>
+
+        </tr>
+      </tbody>
+    </table>
+    <table border="1" cellpadding="5" cellspacing="5">
+      <tr>
+        <th>Firstname</th>
+        <td>Sanji</td>
+        <td>dewo</td>
+      </tr>
+      <tr>
+        <th>Lastname</th>
+        <td>dewo</td>
+        <td>surya</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>Haryo</td>
+        <td>wibowo</td>
+      </tr>
+    </table>
+  </body>
 </html>

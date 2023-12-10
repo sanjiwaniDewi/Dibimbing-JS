@@ -4,7 +4,94 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Forms & Input</title>
+    <title>Forms&Input</title>
   </head>
-  <body></body>
+  <body>
+    <form>
+      <!-- input name -->
+      <div>
+        <label for="name">Name</label><br>
+        <!-- required wajib di isi -->
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Input your name"
+          required>
+      </div>
+      <!-- input email -->
+      <div>
+        <label for="email">Email</label><br>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Input your email">
+      </div>
+      <!-- text area -->
+      <div>
+        <label for="message">Message</label><br>
+        <textarea
+          name="message"
+          id="message"
+          cols="30"
+          rows="5">
+        </textarea>
+      </div>
+      <!-- select -->
+      <div>
+        <label for="country">Country</label><br>
+        <select name="country" id="country">
+          <option>Indonesia 🏰</option>
+          <option>Brunei 🏰</option>
+        </select>
+      </div>
+      <!-- date -->
+      <div>
+        <label for="birthdate">BirthDate</label><br>
+        <input type="date" id="birthdate" name="birthdate">
+      </div>
+
+      <!-- number -->
+      <div>
+        <label for="number">Number</label><br>
+        <input type="number" id="number" name="number">
+      </div>
+
+      <!-- password -->
+
+      <div>
+        <label for="password">Password</label> <br>
+        <input type="password" id="password" name="password">
+      </div>
+
+      <!-- radio button -->
+      <div>
+        <label for="membership">Membership</label>
+        <input type="radio" name="membership" id="membership-simple"
+          alue="simple">
+        Simple
+        <input type="radio" name="membership" id="membership-standard"
+          value="stands">
+        Standard
+        <input type="radio" name="membership" id="membership-premium"
+          value="premium">
+        Premium
+      </div>
+
+      <!-- checkbox -->
+      <div>
+        <label for="likes">What you likes :</label>
+        <input type="checkbox" id="likes-bike" name="likes" value="bike"> Bike
+        <input type="checkbox" id="likes-car" name="likes" value="car"> Car
+        <input type="checkbox" id="likes-boat" name="likes" value="boat"> Boat
+      </div>
+
+      <input
+        type="submit"
+        id="submit"
+        name="submit" value="submit now">
+      <button type="reset">Reset</button>
+    </form>
+  </body>
 </html>
