@@ -4,363 +4,433 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment: Main Blog Page - PutriSanji</title>
+    <style>
+      .container{
+        width: 90%;
+        margin: 0 auto;
+      }
+      table, th, td{
+        border: 1px solid;
+      }
+      th,td{
+        padding: 8px ;
+      }
+      #tableFigure td{
+        border: none;
+      }
+      #tableFigure th{
+        text-align: center;
+      }
+      h3{
+        font-size: 1.3em;
+      }
+      h4, h5{
+        font-size: 1.1em;
+      }
+      h5{
+        margin: 0;
+      }
+      h6{
+        margin: 8px 0;
+        font-size: 1em;
+
+      }
+      .reference{
+        margin-block-start: 8px;
+        list-style-type: none;
+      }
+    </style>
   </head>
   <body>
-    <header>
-
-      <h1>📘 <em>Dibimbing</em> Articles</h1>
-
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </nav>
-
-      <search>
-        <form>
-          <label for="pageSearch">Search: </label>
-          <input type="search" id="pageSearch" name="pageSearch">
-          <input type="submit" value="Search">
-        </form>
-      </search>
-
-    </header>
-
-    <article>
-
+    <div class="container">
       <header>
+        <h1>📘 <em>Dibimbing</em> Articles</h1>
 
-        <h2><em>Introduction to <abbr>HTML</abbr>:</em> HyperText Markup
-          Language</h2>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+          </ul>
+        </nav>
 
-        <video controls width="500">
-          <source src="./assets/media/flower.webm" type="video/webm">
-          <source src="./assets/media/flower.mp4" type="video/mp4">
-        </video>
-
-        <p>Posted by <strong>PSanji</strong> on Monday, December 10<sup>th</sup>,
-          2023</p>
+        <form role="search">
+          <label for="query">Search: </label>
+          <input id="query" name="quary" type="search"
+            placeholder="Search...">
+          <button type="submit">Search</button>
+        </form>
 
       </header>
 
-      <p>All modern websites and web applications are built using three
-        fundamental technologies: <abbr>HTML</abbr>, <dfn id="css"><abbr
-            title="Cascading Style Sheets"
-            style="text-decoration: none; font-style: normal">CSS</abbr></dfn>
-        and JavaScript. These are the languages of the web.</p>
+      <article>
 
-      <p>In this post, let's focus on <abbr>HTML</abbr>. We will learn what
-        <abbr>HTML</abbr> is all about, and why you too should learn it.</p>
+        <header>
+          <!-- h2 for Main Topic -->
+          <h2><em>Introduction to <abbr>HTML</abbr>:</em> HyperText Markup
+            Language</h2>
 
-      <!-- using h2 because in pic look same size with h2 in header -->
-      <h2>What is <abbr>HTML</abbr>?</h2>
+          <video controls width="500">
+            <source src="./assets/media/flower.webm" type="video/webm">
+            <source src="./assets/media/flower.mp4" type="video/mp4">
+          </video>
 
-      <p><addr>HTML</addr> stands for <em>HyperText Markup Language</em>. It's
-        a markup language that web developers use to structure and describe the
-        content of a webpage (not a programming language).</p>
+          <p>Posted by <strong>PSanji</strong> on Monday, December 10<sup>th</sup>,
+            2023</p>
+        </header>
 
-      <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML">
-        <p>"Hypertext" refers to links that connect web pages to one another,
-          either within a single website or between websites. Links are a
-          fundamental aspect of the Web. By uploading content to the Internet
-          and linking it to pages created by other people, you become an active
-          participant in the World Wide Web.</p>
-      </blockquote>
+        <section>
 
-      <p><abbr>HTML</abbr> consists of elements that describe different types
-        of content: paragraphs, links, headings, images, video, etc. Web
-        browsers understand <abbr>HTML</abbr> and render
-        <abbr>HTML</abbr> code as websites.
-      </p>
+          <p>All modern websites and web applications are built using three
+            fundamental technologies: <abbr>HTML</abbr>, <dfn id="css"><abbr
+                title="Cascading Style Sheets"
+                style="text-decoration: none; font-style: normal">CSS</abbr></dfn>
+            and JavaScript. These are the languages of the web.</p>
 
-      <p>In <abbr>HTML</abbr>, each element is made up of 3 parts:</p>
+          <p>In this post, let's focus on <abbr>HTML</abbr>. We will learn what
+            <abbr>HTML</abbr> is all about, and why you too should learn it.</p>
 
-      <ul>
-        <li>The opening tag</li>
-        <li>The closing tag</li>
-        <li>The actual element</li>
-      </ul>
+        </section>
 
-      <figure>
-        <figcaption>Listen to the Audio:</figcaption>
-        <audio controls src="./assets/media/t-rex-roar.mp3">
-          <a href="./assets/media/t-rex-roar.mp3">Download Audio</a>
-        </audio>
-      </figure>
+        <section id="about">
+          <!--  h3 for sub Topic -->
+          <h3>What is <abbr>HTML</abbr>?</h3>
 
-      <p>Hopefully, you learned something new here. See you next time!</p>
+          <p>HTML stands for <em>HyperText Markup Language</em>. It's
+            a markup language that web developers use to structure and describe
+            the content of a webpage (not a programming language).</p>
 
-      <p>You can learn more at <a
-          href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-          target="_blank">MDN Web Docs</a></p>
+          <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML">
+            <p>"Hypertext" refers to links that connect web pages to one
+              another,
+              either within a single website or between websites. Links are a
+              fundamental aspect of the Web. By uploading content to the
+              Internet
+              and linking it to pages created by other people, you become an
+              active
+              participant in the World Wide Web.</p>
+          </blockquote>
 
-      <h2>Why should you learn <abbr>HTML</abbr>?</h2>
+          <p><abbr>HTML</abbr> consists of elements that describe different
+            types
+            of content: paragraphs, links, headings, images, video, etc. Web
+            browsers understand <abbr>HTML</abbr> and render
+            <abbr>HTML</abbr> code as websites.
+          </p>
 
-      <p>There are countless reasons for learning the fundamental language of
-        the web. Here are 5 of them:</p>
+          <p>In <abbr>HTML</abbr>, each element is made up of 3 parts:</p>
 
-      <ol>
-        <li>To be able to use the fundamental web dev language</li>
-        <li>To hand-craft beautiful websites instead of relying on tools like
-          Wordpress or Wix</li>
-        <li>To build web applications</li>
-        <li>To impress friends</li>
-        <li>To have fun 😃</li>
-      </ol>
+          <ul>
+            <li>The opening tag</li>
+            <li>The closing tag</li>
+            <li>The actual element</li>
+          </ul>
 
-      <iframe width="550" height="300"
-        src="https://www.youtube.com/embed/4V5zmxevaiM?si=r3DA9F_0hnoLfod4"></iframe>
+          <figure>
+            <figcaption>Listen to the Audio:</figcaption>
+            <audio controls src="./assets/media/t-rex-roar.mp3">
+              <a href="./assets/media/t-rex-roar.mp3">Download Audio</a>
+            </audio>
+          </figure>
 
-      <h2>Getting Started with <abbr>HTML</abbr></h2>
+          <p>Hopefully, you learned something new here. See you next time!</p>
 
-      <h3>Anatomy of an <abbr>HTML</abbr> element</h3>
+          <p>You can learn more at <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+              target="_blank">MDN Web Docs</a></p>
+        </section>
 
-      <figure style="margin: 0;">
-        <img src="./assets/images/grumpy-cat-small.png"
-          alt="Anatomy HTML Element"
-          width="400px">
-        <figcaption>Anatomy HTML Elements</figcaption>
-      </figure>
+        <section>
+          <!-- using h3 for sub Topic -->
+          <h3>Why should you learn <abbr>HTML</abbr>?</h3>
 
-      <h4>Nested Elements</h4>
+          <p>There are countless reasons for learning the fundamental language
+            of
+            the web. Here are 5 of them:</p>
 
-      <p>Elements can be placed within other elements. This is called nesting.
-        if we wanted to state that our cat is very grumpy, we could wrap the
-        word very in a <code>&lt;strong&gt;</code> element, which means that the
-        word is to have strong(er) text formatting:</p>
+          <ol>
+            <li>To be able to use the fundamental web dev language</li>
+            <li>To hand-craft beautiful websites instead of relying on tools
+              like
+              Wordpress or Wix</li>
+            <li>To build web applications</li>
+            <li>To impress friends</li>
+            <li>To have fun 😃</li>
+          </ol>
 
-      <figure>
-        <table style="border: 1px solid; ">
-          <thead>
-            <tr>
-              <th style="padding: 5px;text-align: left; border:1px solid;">HTML</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding: 3px;"><code>&lt;p&gt;My Cat is
-                  &lt;strong&gt;very&lt;/strong&gt;
-                  grumpy&lt;/p&gt;</code></td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
+          <iframe width="550" height="300"
+            src="https://www.youtube.com/embed/4V5zmxevaiM?si=r3DA9F_0hnoLfod4"></iframe>
+        </section>
 
-      <p>The tags have to open and close in a way that they are inside or
-        outside one another. With the kind of overlap in the example above, the
-        browser has to guess at your intent. This kind of guessing can result in
-        unexpected results.</p>
+        <section>
+          <!-- using h3 for sub Topic -->
+          <h3>Getting Started with <abbr>HTML</abbr></h3>
 
-      <h4>Void Elements</h4>
+          <h4>Anatomy of an <abbr>HTML</abbr> Element</h4>
 
-      <p>Not all elements follow the pattern of an opening tag, content, and a
-        closing tag. Some elements consist of a single tag, which is typically
-        used to insert/embed something in the document for example the
-        <code>&lt;img&gt;</code></p>
+          <figure style="margin: 0;">
+            <img src="./assets/images/grumpy-cat-small.png"
+              alt="Anatomy HTML Element"
+              width="400">
+            <figcaption style="margin-bottom: 1.3em;">Anatomy HTML Element</figcaption>
+          </figure>
 
-      <hgroup>
-        <h4>Reference</h4>
-        <h5>HTML Elements Reverence</h5>
-      </hgroup>
+          <h5>Nested Elements</h5>
 
-      <ol type="i">
-        <li><h6><a
-              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#main_root"
-              target="_blank">Main
-              Root</a></h6></li>
-        <li><h6><a
-              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#document_metadata"
-              target="_blank">Document
-              Metadat</a></h6></li>
-        <li><h6><a
-              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#setioning_root"
-              target="_blank">Setioning
-              Root</a></h6></li>
-        <li><h6><a
-              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#content_sectionnin"
-              target="_blank">Content Sectionning</a></h6></li>
-        <li><h6><a
-              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#text_content"
-              target="_blank">Text Content</a></h6></li>
-        <li><h6><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
-              target="_blank">Others..</a></h6></li>
-      </ol>
+          <p>Elements can be placed within other elements. This is called
+            nesting.
+            if we wanted to state that our cat is very grumpy, we could wrap the
+            word very in a <code>&lt;strong&gt;</code> element, which means that
+            the
+            word is to have strong(er) text formatting:</p>
 
-      <p>Hopefully, you learned something new here. See you next time!</p>
+          <figure>
+            <figcaption><abbr>HTML</abbr> Nested Elements</figcaption>
+            <table id="tableFigure">
+              <thead>
+                <tr>
+                  <th style="text-align: left;">HTML</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&lt;p&gt;My Cat is
+                      &lt;strong&gt;very&lt;/strong&gt;
+                      grumpy&lt;/p&gt;</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </figure>
 
-      <section>
-        <h2><abbr>HTML</abbr> Elements Table</h2>
-        <table style="border: 1px solid;">
-          <caption><abbr>HTML</abbr> Elements References</caption>
-          <thead>
-            <tr>
-              <th style="padding: 8px; border: 1px solid;">Element</th>
-              <th style="border: 1px solid;">Descriptions</th>
-              <th style="border: 1px solid;">Example</th>
-              <th style="border: 1px solid;">Attributs</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding: 8px; border: 1px solid;"><code>&lt;p&gt;</code></td>
-              <td style="border: 1px solid;">Defines a paragraph</td>
-              <td colspan="2" style="border: 1px solid;"><code>&lt;p&gt;This
-                  is
-                  a paragraph &lt;p&gt;</code></td>
-            </tr>
-            <tr>
-              <td style="padding: 8px; border: 1px solid;"><code>&lt;a&gt;</code></td>
-              <td style="border: 1px solid;">Defines a hyperlink</td>
-              <td style="border: 1px solid;"><code>&lt;a href="#"
-                  &gt;</code>
-                <code>&lt;/a&gt;</code></td>
-              <td style="border: 1px solid;">href, target, title</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px; border: 1px solid;"><code>&lt;h1&gt;</code>
-                or <code>&lt;h6&gt;</code></td>
-              <td colspan="3" style="border: 1px solid;"></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+          <p>The tags have to open and close in a way that they are inside or
+            outside one another. With the kind of overlap in the example above,
+            the
+            browser has to guess at your intent. This kind of guessing can
+            result
+            in
+            unexpected results.</p>
 
-      <section>
-        <h2>Contact Form</h2>
-        <form>
-          <!-- input name -->
-          <div>
-            <label for="name">Name:
-              <input type="text" id="name" name="name" placeholder="Your name"
-                size="35">
-            </label>
-          </div>
-          <!-- input email -->
-          <div>
-            <label for="email">Email:
-              <input type="email" id="email" name="email"
-                placeholder="Your email"
-                size="35">
-            </label>
-          </div>
-          <!-- input message -->
-          <div>
-            <label for="message"> Message :
-              <textarea placeholder="Your message...."
-                id="message" name="message" cols="50" rows="5"></textarea>
-            </label>
-          </div>
+          <h5>Void Elements</h5>
 
-          <fieldset>
-            <legend>Additional Information</legend>
-            <label>Gender:</label>
-            <input id="male" type="radio" name="gender" value="male">
-            <label for="male">Male</label>
-            <input id="female" type="radio" name="gender" value="female"><label
-              for="female">Female</label>
+          <p>Not all elements follow the pattern of an opening tag, content, and
+            a
+            closing tag. Some elements consist of a single tag, which is
+            typically
+            used to insert/embed something in the document for example the
+            <code>&lt;img&gt;</code></p>
+
+          <h5>Reference</h5>
+
+          <h6>HTML Elements Reverence</h6>
+
+          <ol type="i" class="reference">
+            <li><h6><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#main_root"
+                  target="_blank">Main Root 🚀</a></h6></li>
+            <li><h6><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#document_metadata"
+                  target="_blank">Document Metadat 🚀</a></h6></li>
+            <li><h6><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#sectioning_root"
+                  target="_blank">Setioning Root 🚀</a></h6></li>
+            <li><h6><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#content_sectioning"
+                  target="_blank">Content Sectionning 🚀</a></h6></li>
+            <li><h6><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#text_content"
+                  target="_blank">Text Content 🚀</a></h6></li>
+            <li><h6><a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
+                  target="_blank">Others 🚀</a></h6></li>
+          </ol>
+
+          <p>Hopefully, you learned something new here. See you next time!</p>
+        </section>
+
+        <section>
+          <h3><abbr>HTML</abbr> Elements Table</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Element</th>
+                <th>Descriptions</th>
+                <th>Example</th>
+                <th>Attributs</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>&lt;p&gt;</code></td>
+                <td>Defines a paragraph</td>
+                <td colspan="2"><code>&lt;p&gt;This
+                    is
+                    a paragraph &lt;p&gt;</code></td>
+              </tr>
+              <tr>
+                <td><code>&lt;a&gt;</code></td>
+                <td>Defines a hyperlink</td>
+                <td><code>&lt;a href="#"
+                    &gt;</code>
+                  <code>&lt;/a&gt;</code></td>
+                <td>href, target, and title</td>
+              </tr>
+              <tr>
+                <td><code>&lt;h1&gt;</code>
+                  or <code>&lt;h6&gt;</code></td>
+                <td colspan="3"></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4" style="text-align: center;">
+                  HTML Elements and Attributs
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+
+        <section id="contact">
+          <h3>Contact Form</h3>
+          <form>
+            <!-- input name -->
+            <div>
+              <label for="name">Name:
+                <input type="text" id="name" name="name" placeholder="Your name"
+                  size="35">
+              </label>
+            </div>
+            <!-- input email -->
+            <div>
+              <label for="email">Email:
+                <input type="email" id="email" name="email"
+                  placeholder="Your email"
+                  size="35">
+              </label>
+            </div>
+            <!-- input message -->
+            <div>
+              <label for="message"> Message :
+                <textarea placeholder="Your message...."
+                  id="message" name="message" cols="50" rows="5"></textarea>
+              </label>
+            </div>
+
+            <fieldset>
+              <legend>Additional Information</legend>
+              <label>Gender:</label>
+              <input id="male" type="radio" name="gender" value="male">
+              <label for="male">Male</label>
+              <input id="female" type="radio" name="gender" value="female"><label
+                for="female">Female</label>
+
+              <br>
+              <label>Interest:</label>
+              <input id="coding" type="checkbox" name="interest"
+                value="coding"><label for="coding">Coding</label>
+              <input id="design" type="checkbox" name="interest"
+                value="design"><label for="design">Design</label>
+              <input id="music" type="checkbox" name="interest"
+                value="music"><label for="music">Music</label>
+            </fieldset>
+            <div>
+              <label for="role"> Choose a Role</label>
+              <br>
+              <select name="role" id="role">
+                <option value>
+                  --Please Choose an Option --
+                </option>
+                <option value="student">
+                  Dibimbing Student
+                </option>
+                <option value="non-student">
+                  Non Dibimbing Student
+                </option>
+                <option value="alumni" disabled>
+                  Dibimbing Alumni
+                </option>
+
+              </select>
+
+            </div>
 
             <br>
-            <label>Interest:</label>
-            <input id="coding" type="checkbox" name="interest"
-              value="coding"><label for="coding">Coding</label>
-            <input id="design" type="checkbox" name="interest"
-              value="design"><label for="design">Design</label>
-            <input id="music" type="checkbox" name="interest"
-              value="music"><label for="music">Music</label>
-          </fieldset>
-          <div>
-            <label for="role"> Choose a Role : </label>
-            <br>
-            <select name="role" id="role">
-              <option value>
-                --Please Choose an Option --
-              </option>
-              <option value="student">
-                Dibimbing Student
-              </option>
-              <option value="non-student">
-                Non Dibimbing Student
-              </option>
-              <option value="alumni" disabled>
-                Dibimbing Alumni
-              </option>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+          </form>
+        </section>
 
-            </select>
+        <aside>
+          <!-- dibimbing article -->
+          <section>
+            <h3><em>Dibimbing</em>Articles</h3>
 
-          </div>
+            <ul>
+              <li>
+                <img src="./assets/images/related-post-1.jpg" alt="post image 1"
+                  width="75" height="75">
+                <a href="#">Create Stunning Ecommerce Website Design</a>
+                <br>
+                <span>By Muhammad Rahmatullah</span>
+              </li>
+              <li>
+                <img src="./assets/images/related-post-2.jpg" alt="post image 2"
+                  width="75" height="75">
+                <a href="#">Top 10 Front-End principles you need to know</a>
+                <br>
+                <span>By Hary Suryanto</span>
+              </li>
+              <li>
+                <img src="./assets/images/related-post-3.jpg" alt="post image 3"
+                  width="75" height="75">
+                <a href="#">How to planning your Front-End Development</a>
+                <br>
+                <span>By PutriSanji</span>
+              </li>
+            </ul>
+          </section>
 
-          <br>
-          <input type="submit" value="Submit">
-        </form>
-      </section>
+          <!-- related article -->
+          <section>
 
-      <aside>
+            <h3>Related Posted</h3>
 
-        <h2><em>Dibimbing</em>Articles</h2>
+            <ul>
+              <li>
+                <img src="./assets/images/related-post-1.jpg" alt="post image 1"
+                  width="75" height="75">
+                <a href="#">Create Stunning Ecommerce Website Design</a>
+                <br>
+                <span>By Muhammad Rahmatullah</span>
+              </li>
+              <li>
+                <img src="./assets/images/related-post-2.jpg" alt="post image 2"
+                  width="75" height="75">
+                <a href="#">Top 10 Front-End principles you need to know</a>
+                <br>
+                <span>By Hary Suryanto</span>
+              </li>
+              <li>
+                <img src="./assets/images/related-post-3.jpg" alt="post image 3"
+                  width="75" height="75">
+                <a href="#">How to planning your Front-End Development</a>
+                <br>
+                <span>By PutriSanji</span>
+              </li>
+            </ul>
+          </section>
 
-        <ul>
-          <li>
-            <img src="./assets/images/related-post-1.jpg" alt="post image 1"
-              width="75" height="75">
-            <a href="#">Create Stunning Ecommerce Website Design</a>
-            <br>
-            <span>By Muhammad Rahmatullah</span>
-          </li>
-          <li>
-            <img src="./assets/images/related-post-2.jpg" alt="post image 2"
-              width="75" height="75">
-            <a href="#">Top 10 Front-End principles you need to know</a>
-            <br>
-            <span>By Hary Suryanto</span>
-          </li>
-          <li>
-            <img src="./assets/images/related-post-3.jpg" alt="post image 3"
-              width="75" height="75">
-            <a href="#">How to planning your Front-End Development</a>
-            <br>
-            <span>By PutriSanji</span>
-          </li>
-        </ul>
-      </aside>
+        </aside>
 
-      <aside>
+      </article>
 
-        <h2>Related Posted</h2>
+      <footer>
+        <p style="text-align: center;">&copy; 2023 PutriSanji |<a href="#">
+            LinkedIn</a></p>
+      </footer>
 
-        <ul>
-          <li>
-            <img src="./assets/images/related-post-1.jpg" alt="post image 1"
-              width="75" height="75">
-            <a href="#">Create Stunning Ecommerce Website Design</a>
-            <br>
-            <span>By Muhammad Rahmatullah</span>
-          </li>
-          <li>
-            <img src="./assets/images/related-post-2.jpg" alt="post image 2"
-              width="75" height="75">
-            <a href="#">Top 10 Front-End principles you need to know</a>
-            <br>
-            <span>By Hary Suryanto</span>
-          </li>
-          <li>
-            <img src="./assets/images/related-post-3.jpg" alt="post image 3"
-              width="75" height="75">
-            <a href="#">How to planning your Front-End Development</a>
-            <br>
-            <span>By PutriSanji</span>
-          </li>
-        </ul>
-      </aside>
-
-    </article>
-
-    <footer>
-      <p style="text-align: center;">&copy; 2023 PutriSanji |<a href="#">
-          LinkedIn</a></p>
-    </footer>
+    </div>
 
   </body>
 </html>
