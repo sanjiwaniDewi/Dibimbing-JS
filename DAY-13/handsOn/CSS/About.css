@@ -1,0 +1,61 @@
+* {
+    font-family: Nunito Sans;
+}
+body {
+    background-color: rgb(14, 14, 37);
+}
+article {
+    margin: 2em 0 auto auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    padding: 2em;
+    border: 2px solid rgb(179, 177, 180);
+    border-radius: 25px;
+    background-color: azure;
+}
+h1,
+h2 {
+    font-family: Koulen;
+}
+h1 {
+    margin-bottom: 0;
+    color: azure;
+}
+h1,
+a {
+    color: azure;
+}
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    border-bottom: 2.5px solid;
+}
+h3 {
+    font-weight: bold;
+}
+img {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+#map {
+    height: 400px;
+    padding: 1rem;
+    align-self: center;
+    border: 1px solid rgb(179, 177, 180);
+    display: flex;
+    justify-content: center;
+}
+#rulers ul {
+    list-style: square;
+    list-style-position: inside;
+}
+section[class="majapahit"] {
+    margin: 10px;
+    padding: 1em;
+    border: 2px solid rgba(206, 203, 203, 0.897);
+    border-radius: 30px;
+}

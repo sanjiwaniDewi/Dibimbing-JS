@@ -1,0 +1,58 @@
+* {
+    font-family: Antic Didone;
+    font-weight: 700;
+}
+body {
+    margin: 0 0;
+    background-image: url(../ASET/SEJARAH-KERAJAAN-MAJAPAHIT.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    background-color: rgba(247, 247, 230, 0.904);
+    height: 100vh;
+    padding: 2em;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Calistoga;
+}
+h1 {
+    font-size: 2em;
+    margin: 0.3em 0;
+}
+h2 {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+h3 {
+    font-size: 1.5em;
+    font-weight: 200;
+    margin-top: 10px;
+    margin-bottom: 0.5em;
+}
+#writter {
+    font-size: 0.8em;
+    font-style: italic;
+}
+img {
+    height: 35vh;
+}
+.map {
+    float: right;
+    size: 50vh;
+    padding: 1.5em;
+    border: 1px solid rgb(221, 221, 221);
+    background-color: aliceblue;
+    border-radius: 25px;
+}
+
+.description p {
+    line-height: 1.75em;
+}
