@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,700;1,800&display=swap"
+      rel="stylesheet">
+    <style>
+      header p{
+        color: rgb(255, 246, 233);
+      }
+      section[class~="content1"]{
+        background-color: azure;
+      }
+      .content1{
+        color:  rgb(77, 179, 77);
+      }
+    </style>
+  </head>
+  <body style="background-color: black">
+    <main>
+      <header style="background: rgb(99, 97, 226);">
+        <h1>Learn CSS</h1>
+        <p>this is a page</p>
+      </header>
+      <article>
+        <section>
+          <!-- inline CSS -->
+          <h1 style="color: blueviolet;">inline CSS</h1>
+        </section>
+        <section class="content1">
+          <!-- internal -->
+          <h2 class="content1">internal CSS</h2>
+        </section>
+        <section class="content">
+          <!-- ekstenal -->
+          <h3 id="content" class="content">external CSS</h3>
+
+          <ul>
+            <li>this first list</li>
+            <li>this second list</li>
+            <li>this third list</li>
+          </ul>
+
+          <ul>
+            <li>this first list</li>
+            <li>this second list</li>
+            <li>this third list</li>
+          </ul>
+        </section>
+      </article>
+
+    </main>
+  </body>
+</html>
