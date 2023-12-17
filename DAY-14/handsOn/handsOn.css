@@ -1,0 +1,60 @@
+body {
+    display: flex;
+}
+section {
+    margin: 5% auto;
+    padding: 5%;
+}
+/* linkedin */
+.linkedIn {
+    background-color: #0e76a8;
+    border-radius: 20px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+}
+.text p {
+    font-family: Open Sans;
+    font-size: 90px;
+    text-align: center;
+    color: aliceblue;
+    margin: auto;
+}
+
+/* facebook */
+.facebook {
+    background-color: #0e18a8;
+    border-radius: 100px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+/* instagram */
+.insta {
+    border: 8px solid black;
+    border-radius: 35px;
+    width: 100px;
+    height: 100px;
+}
+.litle,
+.big {
+    border-radius: 100px;
+}
+
+.big {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    margin-top: 21px;
+    border: 8px solid black;
+}
+.litle {
+    width: 15%;
+    height: 15%;
+    background-color: black;
+    margin: 10px;
+    float: right;
+}

@@ -1,0 +1,104 @@
+/* * {
+    background-color: black;
+    color: azure;
+} */
+/* Span and DIV */
+.container {
+    background-color: aqua;
+}
+
+.span {
+    background-color: blueviolet;
+}
+/* Border property */
+.border {
+    padding: 20px;
+    width: 350px;
+    height: 300px;
+    /* border-width: 5px;
+    border-style: solid;
+    margin: 30px;
+    border-color: blue; */
+    /* lebih simple */
+    /* all */
+    /* border: 5px solid blue; */
+
+    border-radius: 100%;
+    border-left: 50px solid gray;
+    border-right: 50px solid gold;
+}
+.border2 {
+    margin: 0 auto;
+    width: 200px;
+    height: 300px;
+    border-radius: 100%;
+    border-right: 40px solid gray;
+    border-left: 40px solid gold;
+}
+
+/* Width and Height */
+.dimensionParent {
+    width: 30vw;
+    height: 20vh;
+    border: 3px solid yellow;
+}
+.dimensionChild {
+    width: 60%;
+    height: 30%;
+    border: 3px solid pink;
+}
+
+/* Layout */
+.float {
+    padding: 10px;
+    width: 30vw;
+    height: 20vh;
+    border: 3px solid rgb(103, 128, 238);
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* memberi jarak antar content */
+    gap: 20px;
+}
+.right {
+    margin: 10% 0;
+    width: 15%;
+    height: 20%;
+    border: 3px solid pink;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+.middle {
+    margin: 10% 0;
+    width: 15%;
+    height: 30%;
+    border: 3px solid rebeccapurple;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+.left {
+    margin: 10% 0;
+    width: 15%;
+    height: 35%;
+    border: 3px solid rgb(77, 218, 72);
+    position: relative;
+    z-index: 2;
+    float: right;
+    text-align: center;
+}
+
+/* responsif */
+@media only screen and (max-width: 600px) {
+    .float {
+        padding: 10px;
+        width: 90vw;
+        height: 50vh;
+        border: 3px solid rgb(103, 128, 238);
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+}
