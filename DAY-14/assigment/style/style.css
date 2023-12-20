@@ -297,6 +297,8 @@ audio::-webkit-media-controls-panel {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    border-radius: 10px;
 }
 @media only screen and (max-width: 1070px) {
     #reason {
@@ -392,6 +394,8 @@ fieldset {
 }
 fieldset {
     padding: 1vh 2vw;
+    border-radius: 8px;
+    border: 2px solid #f88d46;
 }
 .interest {
     margin-top: 1vh;
