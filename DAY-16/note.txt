@@ -1,0 +1,63 @@
+//bootstrap
+
+#1. introduction
+ ## History
+ - from twitter 
+ - project open-source  
+
+##what is bootstrap
+- open source framework css 
+- tempates html css and classes
+- support js widgets and plugins (dropdown)
+- responsive layout, mobile-first (good responsivity for mobile)
+
+##install and use bootstrap
+
+1.include the CDN
+- must have internet conection 
+
+2.download and include files 
+- dont need internet conection 
+
+3.Package Manager - NPM or Yarn 
+
+
+#2. viewport
+
+for responsivity 
+included in head html inside meta tag 
+//<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+// area in website or computer graphic
+
+in website generally have scene is all size of website 
+viewport in what we see in website not include url in top of browser etc
+element is part of wabsite 
+
+bootstrap must use view port 
+
+myviewport is website to check size viewport in your computer 
+
+made website responsive using vw and vh not pixels
+
+#3. Containers & Grid
+## Containers
+-Can make nested container 
+-bootstrap have lot of container 
+- .container have space in right and left 
+- .contener-fluid full viewport
+ website reference:
+https://getbootstrap.com/docs/5.1/examples/grid/#containers
+
+##Grid
+-2D structure with axis: horizontal and vertical
+-property row and col
+
+#4. Media Query
+made website responsive
+usage in bootstap sm md lg xl xxl
+
+#5. Images 
+made eaz to style images and made responsive
+responsive images using img-fluid 
+scale with parent width 
