@@ -46,19 +46,17 @@ function isValidWalk(walk) {
                 case "s":
                     newWalk.push(-1);
                     break;
-
                 case "e":
-                    newWalk.push(-2);
+                    newWalk.push(2);
                     break;
                 case "w":
-                    newWalk.push(2);
+                    newWalk.push(-2);
                     break;
                 default:
                     break;
             }
         }
-        let total = newWalk.reduce((add, a) => add + a);
-        return total === 0 ? true : false;
+        return newWalk.reduce((add, a) => add + a) ? false : true;
     }
 
     return false;
@@ -70,3 +68,4 @@ console.log(
 );
 console.log(isValidWalk(["w"]));
 console.log(isValidWalk(["n", "n", "n", "s", "n", "s", "n", "s", "n", "s"]));
+console.log(isValidWalk(["e", "s", "e", "s", "w", "s", "w", "n", "n", "n"]));
