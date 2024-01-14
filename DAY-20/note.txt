@@ -1,1 +1,46 @@
 #Git and dithub
+
+file status 
+A - Added (This is a new file that has been added to the repository)
+M - Modified (An existing file has been changed)
+D - Deleted (a file has been deleted)
+U - Untracked (The file is new or has been changed but has not been added to the repository yet)
+C - Conflict (There is a conflict in the file)
+R - Renamed (The file has been renamed)
+S - Submodule (In repository exists another subrepository)
+T - Typechange (The file changed from symlink to regular file, or visa versa)
+
+
+#create branch 
+ git checkout -b "branch name"
+ 
+#move branch
+ git checkout "branch name"
+
+#git merge 
+ git merge <branch name yang mau di merge ke branch yang sedang aktif>
+
+#git reset 
+## soft and hard 
+untuk mereset atau merevert add atau commit
+
+#git  undo commit
+git reset --mixed HEAD~ commit dan add nya hilang
+
+git reset --hard HEAD  menghapus semuanya file commit add 
+
+git reset --hard HEAD~1 mundur 1 langkah dari head angka di belakang merepresentasikan mundur berapa
+
+git reset --hard <commit id> mereset commit tertentu
+
+git reset --soft HEAD~  masih ke add tapi commitnya hilang kalo hard filenya ilang kalo soft filenya ngak ilang 
+
+#git push origin main -f digunakan untuk memaksa push  
+
+#git Rebase solve conflict 
+
+#git Tag 
+git tag -a v1.0 -m "release vesion v1.0"
+git tag -d v1.0  delete in local
+
+
