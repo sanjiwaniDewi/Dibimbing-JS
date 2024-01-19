@@ -16,15 +16,13 @@
 // Jawaban:
 const number = (busStops) => {
     // write your code here
-    let newArr = busStops
+    return busStops
         .map((a) =>
             a.reduce((accumulator, value) =>
                 accumulator === 0 ? (accumulator = value) : accumulator - value
             )
         )
         .reduce((accumulator, value) => accumulator + value);
-
-    return newArr;
 };
 
 console.log(

@@ -19,7 +19,10 @@
 
 const checkPalindrom = (data) => {
     // write your code here
-    return data === data.split("").reverse().join("") ? true : false;
+    return data.toLowerCase() ===
+        data.toLowerCase().split("").reverse().join("")
+        ? true
+        : false;
 };
 
 console.log(checkPalindrom("kasur"));
