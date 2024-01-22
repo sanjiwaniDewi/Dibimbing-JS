@@ -40,4 +40,18 @@ const data = [
 // Jawaban
 // write your code here
 
+//find uniqe keys of data
+
+const table = {
+    header: [
+        ...new Set( //return uniq keys of data
+            data
+                .map((a) => Object.keys(a))
+                .join()
+                .split(",")
+        ),
+    ],
+    data: data,
+};
+
 console.log(table.data);

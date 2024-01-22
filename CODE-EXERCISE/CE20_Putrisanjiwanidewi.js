@@ -17,12 +17,14 @@ const arr = [
 // jawaban
 const longestString = (arr) => {
     // write your code here
-    //find longest length of the word
-    let index = Math.max(...arr.map((a) => (a = a.split(" ").length)));
 
-    // filter word which have longest length
+    // return word which have longest length
     return arr
-        .filter((a) => a.split(" ").length === index)
+        .filter(
+            (a) =>
+                a.split(" ").length ===
+                Math.max(...arr.map((a) => (a = a.split(" ").length)))
+        )
         .join("")
         .replace(".", "");
 };
