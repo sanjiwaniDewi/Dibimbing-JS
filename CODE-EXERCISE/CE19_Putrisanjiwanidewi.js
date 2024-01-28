@@ -44,6 +44,7 @@ const data = [
 
 const table = {
     header: [
+        "number",
         ...new Set( //return uniq keys of data
             data
                 .map((a) => Object.keys(a))
