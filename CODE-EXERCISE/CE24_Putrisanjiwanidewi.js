@@ -18,15 +18,13 @@
 // jawaban
 const generatePyramid = (n) => {
     // write your code here
-    for (let i = 1; i <= n; i++) {
-        let print = "";
-        for (let j = 1; j <= n; j++) {
-            if (j === i) {
-                print += j;
-                break;
-            }
-            print += `${j} `;
+    let print = "";
+    if (n >= 1) {
+        for (let i = 1; i <= n; i++) {
+            print += `${i} `;
         }
+        n--;
+        generatePyramid(n);
         console.log(print);
     }
 };
