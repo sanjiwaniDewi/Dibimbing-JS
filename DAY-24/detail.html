@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detail Product</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      main{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .root{
+        box-shadow: 0 0  1px #000;
+        width:20vw;
+        height: auto;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 1rem;
+      }
+      .root img{
+        width:18vw;
+        height: auto;
+      }
+      .root h3{
+        text-align: center;
+        margin-bottom: 3px;
+      }
+      .root p{
+        font-weight: 600;
+        padding: 10px;
+        box-shadow:0 0  1px #000;
+        border-radius: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+
+    <main>
+      <div class="root">
+
+      </div>
+    </main>
+
+    <script>
+      let root = document.querySelector(".root")
+      let params = new URLSearchParams(location.search)
+
+      axios.get(`https://fakestoreapi.com/products/${params.get("id")} `).then(function (res){
+        console.log(res)
+        root.innerHTML=`
+          <img src=${res.data.image} alt=${res.data.title}>
+          <h3>${res.data.title}</h3>
+          <p>$${res.data.price}</p>
+        
+        `
+    
+      }).catch(function (err){
+          root.innerHTML += `<h1>error ${err.message}<h1>`
+      })
+    </script>
+
+  </body>
+</html>
